@@ -10,10 +10,6 @@ return {
 
                 -- js ts
                 null_ls.builtins.formatting.prettier,
-
-                -- go
-                null_ls.builtins.formatting.gofumpt,
-                null_ls.builtins.formatting.goimports_reviser,
             },
         })
 
