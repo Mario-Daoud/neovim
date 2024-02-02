@@ -1,5 +1,5 @@
 local opt = vim.opt
-local indent = 4
+local indent = 2
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
