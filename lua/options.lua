@@ -1,11 +1,13 @@
 local opt = vim.opt
-local indent = 2
+local indent = 4
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 opt.number = true
 opt.relativenumber = true
+
+opt.colorcolumn = "79"
 
 opt.wrap = false
 opt.expandtab = true

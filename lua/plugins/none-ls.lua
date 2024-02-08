@@ -10,9 +10,6 @@ return {
 
 				-- js ts
 				null_ls.builtins.formatting.prettier,
-
-				-- rust
-				null_ls.builtins.diagnostics.rust_analyzer,
 			},
 		})
 
