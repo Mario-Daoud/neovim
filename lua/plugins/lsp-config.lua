@@ -2,15 +2,23 @@ return {
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			require("mason").setup()
+			require("mason").setup({
+				ui = {
+					icons = {
+						package_installed = "",
+						package_pending = "",
+						package_uninstalled = "",
+					},
+				},
+			})
 		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-        lazy = false,
-        opts = {
-            auto_install = true,
-        }
+		lazy = false,
+		opts = {
+			auto_install = true,
+		},
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -30,6 +38,21 @@ return {
 			})
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
+			})
+			lspconfig.rust_analyzer.setup({
+				capabilities = capabilities,
+				filetypes = { "rust" },
+				root_dir = require("lspconfig/util").root_pattern("Cargo.toml"),
+				settings = {
+					["rust_analyzer"] = {
+						cargo = {
+							allFeature = true,
+						},
+						diagnostics = {
+							enable = true,
+						},
+					},
+				},
 			})
 
 			vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, {})
